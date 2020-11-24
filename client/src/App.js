@@ -1,18 +1,35 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
+import Nav from "./components/Nav";
+import NotFound from "./pages/NotFound";
+import User from "./pages/User";
+import WorkoutBuilder from "./pages/WorkoutBuilder";
+import ViewGames from "./pages/ViewGames";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Footer from "./components/Footer";
 
+//The render function, including all the various routes for the different pages.
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Nav />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/signup" component={Signup}></Route>
+            <Route exact path="/user" component={User}></Route>
+            <Route exact path="/games" component={ViewGames}></Route>
+            <Route exact path="/workoutbuilder" component={WorkoutBuilder}></Route>
+            <Route component={NotFound}></Route>
+          </Switch>
+        </Router>
+        <Footer />
       </div>
     );
   }
