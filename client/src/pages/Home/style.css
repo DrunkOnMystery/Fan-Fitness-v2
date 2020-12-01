@@ -1,0 +1,44 @@
+#homeContainer {
+    background: url("./Image/BabeRuth.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 1500px;
+    font-weight: bold;
+    color: white
+
+}
+
+#homeJumbotron {
+    width: 60%;
+    justify-content: center;
+    background: black;
+    opacity: .55;
+    margin: auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.jumbotron-left {
+    width: 40%;
+    margin-right: 50%;
+    margin-top: 30px;
+    background: black;
+    opacity: .55;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.jumbotron-right {
+    width: 40%;
+    margin-left: 50%;
+    margin-top: 30px;
+    background: black;
+    opacity: .55;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}

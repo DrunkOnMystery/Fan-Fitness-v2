@@ -1,0 +1,10 @@
+#workoutBuilderContainer {
+    background: url("./Image/StanMusial.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 1500px;
+    font-weight: bold;
+    color: white
+
+}

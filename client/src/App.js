@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import "./App.css";
 import Nav from "./components/Nav";
 import NotFound from "./pages/NotFound";
@@ -10,6 +11,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Footer from "./components/Footer";
+
 
 //The render function, including all the various routes for the different pages.
 class App extends Component {

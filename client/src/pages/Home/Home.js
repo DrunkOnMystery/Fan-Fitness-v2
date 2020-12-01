@@ -1,12 +1,69 @@
 import React from "react";
 import "./style.css"
-import "../../components/Wrapper"
+// import Dropdown from "react-bootstrap/Dropdown";
+import { Container, Row, Col } from "../../components/Grid";
+
 
 
 
 function Home() {
     return (
-        <Wrapper_Home />
+        <div id="homeContainer">
+            <Container>
+                <Row>
+                    <Col>
+                        <div class="jumbotron" id="homeJumbotron">
+                            <h1 class="bolder">Welcome to Fan Fitness</h1>
+                            <h6 class="bolder lead">The world's first baseball-results themed workout app.</h6>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div class="jumbotron-left jumbotron">
+                            <p class="bolder">The goal of this fitness program is to tie supporting your team with getting in shape.</p>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div class="jumbotron-right jumbotron">
+                            <p class="bolder">The way it works is:
+                            You search for a game by the date it was played.
+                            You click on your team.</p>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div class="jumbotron-left jumbotron">
+                            <p class="bolder">From there, the stats of your team and their opponent will be shown to you, along with multipliers for a workout.</p>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div class="jumbotron-right jumbotron">
+                            <p class="bolder">When your team plays well, you'll work out less. When their opponents play well, you'll work out more.</p>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div class="jumbotron-left jumbotron">
+                            <p class="bolder">You can create your own workouts, or add new exercises for your workouts to our database.</p>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div class="jumbotron-right jumbotron">
+                            <p class="bolder">So get ready to get in shape and cheer on your team!</p>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     )
 }
 

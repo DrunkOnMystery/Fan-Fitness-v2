@@ -1,0 +1,29 @@
+#loginContainer {
+    background: url("./Image/JimmieFoxx.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 1500px;
+    font-weight: bold;
+    color: white
+
+}
+
+#inputEmail {
+    width: 40%;
+    margin: auto;
+}
+
+#inputPassword {
+    width: 40%;
+    margin: auto;
+}
+
+#signInButton {
+    width: 40%;
+    margin: auto;
+}
+
+#pleaseLogIn {
+    padding-top: 75px;
+}
