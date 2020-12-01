@@ -16,19 +16,18 @@ function User() {
                     </Col>
                 </Row>
                 <Row>    
-                <Col>
-                    <div className="col-sm-6">
+                    <Col className="col">
+                    <div id="left-UserColumn" >
                         <h5>Your Previous Workouts</h5>
                         <p>Clickable links for your previous workouts</p>
                     </div>
                     </Col>
-                    <Col>
-                    <div className="col-sm-6">
+                    <Col className="col">
+                    <div id="right-UserColumn">
                         <h5>Your Previous Workouts</h5>
                         <p>Clickable links for your previous workouts</p>
                     </div>
                     </Col>
-
                 </Row>
             </Container>
         </div>

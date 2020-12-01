@@ -8,3 +8,11 @@
     color: white
 
 }
+
+#right-UserColumn {
+    margin-left: 50%;
+}
+
+#left-UserColumn {
+    margin-right: 50%;
+}
