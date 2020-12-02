@@ -8,3 +8,16 @@
     color: white
 
 }
+
+#inputForm {
+    width: 50%;
+    margin: auto;
+    position: relative;
+}
+
+.shade {
+    background: black;
+    opacity: .55;
+    padding-top: 32px;
+    font-weight: bolder;
+}
