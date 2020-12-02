@@ -25,9 +25,11 @@ function Login() {
                                         </div>
                                         <button id="signInButton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                                         <p class="mt-5 mb-3 text-muted"></p>
-                         </form>
-                                
+                         </form>         
                     </div>
+                </div>
+                <div>
+                    <h6><a className="link" href="/signup">Not registered yet? Click here to sign up!</a></h6>
                 </div>
             </Container>
         </div>
