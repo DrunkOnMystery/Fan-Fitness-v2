@@ -21,8 +21,10 @@ function User() {
                             <p>Clickable links for your previous workouts</p>
                     </div>
                     <div className="col-lg-6">
-                            <h5>Your Previous Workouts</h5>
-                            <p>Clickable links for your previous workouts</p>
+                            <h5><h5>Workout Display For The Game You Clicked</h5></h5>
+                            <p>Exercise 1</p>
+                            <p>Exercise 2</p>
+                            <p>Exercise 3</p>
                     </div>
                 </div>
             </Container>
