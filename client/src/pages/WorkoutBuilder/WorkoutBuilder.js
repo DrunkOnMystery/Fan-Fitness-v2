@@ -57,7 +57,7 @@ function WorkoutBuilder() {
 
     return (
         <div id="workoutBuilderContainer">
-            <Container className="shade jumbotron">
+            <Container>
                 <div className="row">
                     <div className="col">
                         <h2 id="workoutPageTitle">Workout Builder
