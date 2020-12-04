@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css"
 import { Container } from "../../components/Grid";
 import API from "../../utils/API"
@@ -7,6 +7,62 @@ import { Input, FormBtn } from "../../components/Form";
 
 
 function ViewGames() {
+
+
+    //set state constants
+    const [games, setGames] = useState([])
+    const [formObject, setFormObject] = useState({})
+
+//set use effect
+    useEffect(() => {
+        loadGames()
+    }, [])
+
+    //load games from the games database
+    function loadGames() {
+        API.getGames()
+            .then(res =>
+                setGames(res.data)
+            )
+            .catch(err => console.log(err));
+        console.log(games);
+    }
+
+    function handleInputChange(event) {
+        const { teamname, value } = event.target;
+        setFormObject({ ...formObject, [teamname]: value })
+    };
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.date) {
+            API.saveGame({
+                gamedate: formObject.date,
+                teamname: formObject.name,
+                runs: formObject.runs,
+                homeruns: formObject.homeruns,
+                OppStrikeouts: formObject.OppStrikeouts,
+                OppRuns: formObject.OppRuns,
+                OppHomeRuns: formObject.OppHomeRuns,
+                strikeouts: formObject.strikeouts
+            })
+                .then(() => setFormObject({
+                    gamedate: "",
+                    teamname: "",
+                    runs: "",
+                    homeruns: "",
+                    OppStrikeouts: "",
+                    OppRuns: "",
+                    OppHomeRuns: "",
+                    strikeouts: "",
+                }))
+                .then(() => loadGames())
+                .catch(err => console.log(err))
+        }
+    };
+
+
+
     return (
         <div id="viewGamesContainer">
             <Container>
@@ -29,9 +85,28 @@ function ViewGames() {
                         </div>
                     </div>
                     <div className="col">
-                        <div id="right-column">
-                            <h5>Workout Display For The Game You've Chosen</h5>
-                        </div>
+                    <div id="right-column">
+                                    <h5>Workout Display For The Game You've Chosen</h5>
+
+                                    {games.length ? (
+                                            <ul className="vertical menu gamesDisplay">
+                                                {games.map(game => {
+                                                    return(
+                                                        <li key={game.gamedate}>
+                                                            <a href={"/games/ + game._teamname"}>
+                                                                <strong>{game.teamname} {game.runs}-{game.OppRuns}
+                                                                </strong>
+                                                            </a>
+                                                        </li>
+
+                                                    )
+                                                })}
+                                            </ul>
+                                            ) : (
+                                                <h5>No Results To Display</h5>
+                                            )}
+
+                                </div>
                     </div>
                 </div>
             </Container>
