@@ -89,14 +89,12 @@ function ViewGames() {
                                     <h5>Workout Display For The Game You've Chosen</h5>
 
                                     {games.length ? (
-                                            <ul className="vertical menu gamesDisplay">
+                                            <ul>
                                                 {games.map(game => {
                                                     return(
                                                         <li key={game.gamedate}>
-                                                            <a href={"/games/ + game._teamname"}>
                                                                 <strong>{game.teamname} {game.runs}-{game.OppRuns}
                                                                 </strong>
-                                                            </a>
                                                         </li>
 
                                                     )
