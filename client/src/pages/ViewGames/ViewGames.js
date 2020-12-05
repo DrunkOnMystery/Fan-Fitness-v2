@@ -3,6 +3,7 @@ import "./style.css"
 import { Container } from "../../components/Grid";
 import API from "../../utils/API"
 import { Input, FormBtn } from "../../components/Form";
+import DeleteBtn from "../../components/DeleteBtn";
 
 
 
@@ -27,6 +28,13 @@ function ViewGames() {
             .catch(err => console.log(err));
         console.log(games);
     }
+
+    // const removeGame = id => {
+    //     dispatch({
+    //       type: REMOVE_GAME,
+    //       _id: id
+    //     });
+    //   };
 
     function handleInputChange(event) {
         const { teamname, value } = event.target;
@@ -98,6 +106,7 @@ function ViewGames() {
                                                         <li key={game.gamedate}>
                                                                 <strong>{game.teamname} {game.runs}-{game.OppRuns}
                                                                 </strong>
+                                                                {/* <DeleteBtn onClick={() => removeGame(post._id)} /> */}
                                                         </li>
 
                                                     )
