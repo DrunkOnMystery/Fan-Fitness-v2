@@ -66,10 +66,13 @@ function ViewGames() {
     return (
         <div id="viewGamesContainer">
             <Container>
+                
                 <div className="row">
                     <div className="col">
+                    <div className="shade jumbotron">
                         <div id="vgTitle">
                             <h2>Select The Games For Your Workouts</h2>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +80,7 @@ function ViewGames() {
                 <br />
                 <div className="row">
                     <div className="col">
-                        <div>
+                        <div className="shade jumbotron">
                             <h5>Search Team Stats By Date</h5>
                             <br />
                             <p>Clickable links for the stats from that day's games will display in this column</p>
@@ -85,7 +88,7 @@ function ViewGames() {
                         </div>
                     </div>
                     <div className="col">
-                    <div id="right-column">
+                    <div id="right-column" className="shade jumbotron">
                                     <h5>Workout Display For The Game You've Chosen</h5>
 
                                     {games.length ? (
@@ -99,6 +102,7 @@ function ViewGames() {
 
                                                     )
                                                 })}
+                                                <br/>
                                             </ul>
                                             ) : (
                                                 <h5>No Results To Display</h5>

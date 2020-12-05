@@ -60,8 +60,10 @@ function WorkoutBuilder() {
             <Container>
                 <div className="row">
                     <div className="col">
-                        <h2 id="workoutPageTitle">Workout Builder
-                        </h2>
+                        <div className="shade jumbotron">
+                        <h1 id="workoutPageTitle">Workout Builder
+                        </h1>
+                        </div>
                     </div>
                 </div>
                 <br />
