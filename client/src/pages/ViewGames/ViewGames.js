@@ -6,10 +6,7 @@ import { Input, FormBtn } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
 
 
-
 function ViewGames() {
-
-
     //set state constants
     const [games, setGames] = useState([])
     const [formObject, setFormObject] = useState({})
@@ -27,7 +24,7 @@ function ViewGames() {
             )
             .catch(err => console.log(err));
         console.log(games);
-    }
+    };
 
     // const removeGame = id => {
     //     dispatch({

@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 //Game Schema file
     const gameSchema = new Schema({
+
       teamname: {
         type: String, required: true
       },

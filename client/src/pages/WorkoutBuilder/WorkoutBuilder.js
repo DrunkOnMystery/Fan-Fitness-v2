@@ -1,9 +1,87 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
 import "./style.css"
 import { Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
+// import ExerciseDropdown from "../../components/ExerciseDropdown/ExerciseOne";
 
+
+class Dropdown extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            showMenu: false,
+        }
+
+        this.showMenu = this.showMenu.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
+    }
+
+    showMenu(event) {
+        event.preventDefault();
+
+        this.setState({ showMenu: true }, () => {
+            document.addEventListener("click", this.closeMenu);
+        });
+    }
+
+    closeMenu(event) {
+        if (!this.dropdownMenu.contains(event.target)) {
+            this.setState({ showMenu: false }, () => {
+                document.removeEventListener("click", this.closeMenu);
+            });
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.showMenu}>
+                    Choose Exercise One
+                </button>
+
+
+                {/* {exercises.length ? (
+                                <ul className="vertical menu accordion-menu" data-accordion-menu>
+                                    <li>
+                                        <p>Current Exercises In The Database:</p>
+                                        <ul className="menu simple">
+                                            {exercises.map(exercise => {
+                                                return (
+                                                    <li key={exercise._name}>
+                                                        <h5>
+                                                            {exercise.name}
+                                                            <br />
+                                                        </h5>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                    </li>
+                                </ul>
+                            ) : (
+                                    <h5> NOTHING TO DISPLAY</h5>
+                                )}
+                        </div> */}
+                {
+                    this.state.showMenu
+                  {exercises.length ? (
+                            <div className="menu" ref={(element) => {
+                                this.dropdownMenu = element;
+                            }}>
+                                <button>{exercise.name}</button>
+                            </div>
+                        )
+                        : (
+                            null
+                        )
+                }
+            </div>
+        );
+    }
+}
 
 //function for the WorkoutBuilder page
 function WorkoutBuilder() {
@@ -54,14 +132,13 @@ function WorkoutBuilder() {
         }
     };
 
-
     return (
         <div id="workoutBuilderContainer">
             <Container>
                 <div className="row">
                     <div className="col">
                         <div className="shade jumbotron">
-                        <h1 id="workoutPageTitle">Workout Builder
+                            <h1 id="workoutPageTitle">Workout Builder
                         </h1>
                         </div>
                     </div>
@@ -124,17 +201,18 @@ function WorkoutBuilder() {
                                 )}
                         </div>
                     </div>
-                    <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-  </a>
+                    <Dropdown />
+                    {/* <div className="dropdown">
+                        <a className="btn btn-secondary dropdown-toggle" onclick="dropdownFunction()" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown link
+                        </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+                        <div id="dropdown" className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a className="dropdown-item" href="#">Action</a>
+                            <a className="dropdown-item" href="#">Another action</a>
+                            <a className="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div> */}
                     <div className="col">
                         <div className="shade jumbotron">
                             <h4>Workout Requirements For The Chosen Game:</h4>
