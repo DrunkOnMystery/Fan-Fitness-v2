@@ -87,6 +87,18 @@ function ViewGames() {
                     <div className="col">
                         <div className="shade jumbotron">
                             <h5>Search Team Stats By Date</h5>
+                            <form>
+                                        <Input
+                                            onChange={handleInputChange}
+                                            date="Search Date"
+                                            placeholder="XXXX-MON-XX (required)"
+                                        />
+                                        <FormBtn
+                                            disabled={!(formObject.gamedate)}
+                                            onClick={handleFormSubmit}>
+                                            Search Date
+                                        </FormBtn>
+                                    </form>
                             <br />
                             <p>Clickable links for the stats from that day's games will display in this column</p>
                             <p>The goal is to make each team's name a clickable link, which when clicked, would cause the stats for that team to appear on the opposite column.</p>

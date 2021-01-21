@@ -65,9 +65,8 @@ class Dropdown extends Component {
                                     <h5> NOTHING TO DISPLAY</h5>
                                 )}
                         </div> */}
-                {
-                    this.state.showMenu
-                  {exercises.length ? (
+                
+                  {/* {exercises.length ? (
                             <div className="menu" ref={(element) => {
                                 this.dropdownMenu = element;
                             }}>
@@ -77,7 +76,7 @@ class Dropdown extends Component {
                         : (
                             null
                         )
-                }
+                } */}
             </div>
         );
     }
